@@ -41,7 +41,9 @@ export default async function handler(req, res) {
     let url = '';
 
     if (guard.tier === 1) {
-      url = `${process.env.HOST}/form/tier-1/${orderId}?token=${encodeURIComponent(token)}`;
+      // removing tier-1 flow only keeping tier-2
+      // url = `${process.env.HOST}/form/tier-1/${orderId}?token=${encodeURIComponent(token)}`;
+      url = `${process.env.HOST}/form/${orderId}?token=${encodeURIComponent(token)}`;
     } else {
       url = `${process.env.HOST}/form/${orderId}?token=${encodeURIComponent(token)}`;
     }
